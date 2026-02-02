@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🏛️ Top 10 Athens - Pat & Cindy</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      color: #fff;
+    }
+    header {
+      text-align: center;
+      padding: 24px 20px;
+      background: rgba(255,255,255,0.05);
+    }
+    header h1 { font-size: 26px; margin-bottom: 4px; }
+    header p { color: rgba(255,255,255,0.7); font-size: 14px; }
+    
+    .map-container {
+      width: 100%;
+      height: 250px;
+      background: #0a0a15;
+    }
+    .map-container a { display: block; width: 100%; height: 100%; }
+    .map-container img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .places {
+      padding: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .place-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 16px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      color: #1a1a2e;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    
+    .place-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    
+    .place-content { padding: 14px; }
+    .place-header { display: flex; align-items: center; gap: 10px; }
+    .place-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #c9a227, #d4af37);
+      color: #1a1a2e;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .place-name { 
+      font-size: 20px;
+      font-weight: bold;
+      color: #1a1a2e;
+    }
+    .place-type {
+      color: #666;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+    .place-description {
+      margin-top: 10px;
+      color: #444;
+      line-height: 1.55;
+      font-size: 14px;
+    }
+    .place-tip {
+      margin-top: 10px;
+      padding: 10px;
+      background: #fff8e1;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #5d4037;
+      line-height: 1.4;
+    }
+    .place-tip strong { color: #ff8f00; }
+    
+    .directions-btn {
+      display: block;
+      background: linear-gradient(135deg, #c9a227, #d4af37);
+      color: #1a1a2e;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    
+    .back-link {
+      display: block;
+      text-align: center;
+      color: #d4af37;
+      padding: 16px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🏛️ Top 10 Things to Do in Athens</h1>
+    <p>The essential city guide for Pat & Cindy</p>
+  </header>
+  
+  <div class="map-container">
+    <a href="https://www.google.com/maps/search/attractions+in+Athens+Greece/@37.9755,23.7348,14z" target="_blank">
+      <img 
+        src="https://maps.googleapis.com/maps/api/staticmap?center=37.975,23.727&zoom=14&size=640x250&scale=2&maptype=roadmap&markers=color:gold%7C37.9715,23.7267&markers=color:gold%7C37.9757,23.7388&markers=color:gold%7C37.9684,23.7295&markers=color:gold%7C37.9762,23.7350&markers=color:gold%7C37.9774,23.7326&markers=color:gold%7C37.9838,23.7275&markers=color:gold%7C37.9693,23.7308&markers=color:gold%7C37.9786,23.7119&markers=color:gold%7C37.9680,23.7330&markers=color:gold%7C37.9847,23.7293&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+        alt="Athens Map"
+        onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'; this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;color:white;\'><div style=\'text-align:center;\'><div style=\'font-size:40px;\'>🏛️</div><div>Tap to open Athens in Maps</div></div></div>';"
+      >
+    </a>
+  </div>
+  
+  <div class="places">
+    
+    <!-- 1. Acropolis -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80" alt="Acropolis">
+      <div class="place-content">
+        <div class="place-header">
+          <span class="place-number">1</span>
+          <div>
+            <div class="place-name">The Acropolis & Parthenon</div>
+            <div class="place-type">🏛️ Ancient Monument • UNESCO Site</div>
+          </div>
+        </div>
+        <p class="place-description">The crown jewel of Athens and symbol of ancient Greece. The Parthenon temple atop this rocky hill has stood for 2,500 years. Absolutely unmissable—the views of the city are spectacular too.</p>
+        <div class="place-tip"><strong>💡 Tip:</strong> Go at 8am when gates open to avoid crowds and heat. Wear sturdy shoes—the marble is slippery!</div>
+        <a class="directions-btn" href="https://www.google.com/maps/place/Acropolis+of+Athens/@37.9715,23.7267,17z" target="_blank">Open in Maps 🗺️</a>
+      </div>
+    </div>
+
+    <!-- 2. Acropolis Museum -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1608037521244-f1c6c7635194?w=800&q=80" alt="Acropolis Museum">
+      <div class="place-content">
+        <div class="place-header">
+          <span class="place-number">2</span>
+          <div>
+            <div class="place-name">Acropolis Museum</div>
+            <div class="place-type">🏺 Museum • World-Class</div>
+          </div>
+        </div>
+        <p class="place-description">Stunning modern museum housing artifacts from the Acropolis. Glass floors reveal ancient ruins beneath. The top floor has incredible Parthenon sculptures with views of the actual Acropolis.</p>
+        <div class="place-tip"><strong>💡 Tip:</strong> Visit after the Acropolis—it's air-conditioned and provides context for what you just saw. The restaurant has great views!</div>
+        <a class="directions-btn" href="https://www.google.com/maps/place/Acropolis+Museum/@37.9684,23.7295,17z" target="_blank">Open in Maps 🗺️</a>
+      </div>
+    </div>
+
+    <!-- 3. Plaka -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1594397376672-0c8f3ac55b04?w=800&q=80" alt="Plaka neighborhood">
+      <div class="place-content">
+        <div class="place-header">
+          <span class="place-number">3</span>
+          <div>
+            <div class="place-name">Plaka District</div>
+            <div class="place-type">🏘️ Historic Neighborhood</div>
+          </div>
+        </div>
+        <p class="place-description">The oldest neighborhood in Athens, nestled at the foot of the Acropolis. Charming pedestrian streets lined with neoclassical houses, tavernas, cafes, and shops. Perfect for evening strolls and dinner.</p>
+        <div class="place-tip"><strong>💡 Tip:</strong> Get lost in the narrow streets of Anafiotika—it feels like a Greek island village! Great for dinner with live music.</div>
+        <a class="directions-btn" href="https://www.google.com/maps/place/Plaka,+Athens/@37.9725,23.7300,16z" target="_blank">Open in Maps 🗺️</a>
+      </div>
+    </div>
+
+    <!-- 4. Ancient Agora -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1598977054780-2699c0c50bac?w=800&q=80" alt="Ancient Agora">
+      <div class="place-content">
+        <div class="place-header">
+          <span class="place-number">4</span>
+          <div>
+            <div class="place-name">Ancient Agora</div>
+            <div class="place-type">🏛️ Archaeological Site</div>
+          </div>
+        </div>
+        <p class="place-description">The heart of ancient Athens where Socrates walked and democracy was born. The Temple of Hephaestus is the best-preserved ancient Greek temple. Less crowded than Acropolis but equally fascinating.</p>
+        <div class="place-tip"><strong>💡 Tip:</strong> The Stoa of Attalos museum inside is excellent. Imagine this place as a bustling marketplace 2,500 years ago!</div>
+        <a class="directions-btn" href="https://www.google.com/maps/place/Ancient+Agora+of+Athens/@37.9749,23.7219,17z" target="_blank">Open in Maps 🗺️</a>
+      </div>
+    </div>
+
+    <!-- 5. Monastiraki -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1608730558571-00c8b042c571?w=800&q=80" alt="Monastiraki Square">
+      <div class="place-content">
+        <div class="place-header">
+          <span class="place-number">5</span>
+          <div>
+            <div class="place-name">Monastiraki Square & Flea Market</div>
+            <div class="place-type">🛍️ Market • Vibrant Square</div>
+          </div>
+        </div>
+        <p class="place-description">Buzzing square with views of the Acropolis, surrounded by the famous flea market. Find antiques, souvenirs, vinyl records, and everything in between. The energy here is electric!</p>
+        <div class="place-tip"><strong>💡 Tip:</strong> Sunday morning is best for the flea market. Grab a souvlaki at Thanasis—locals swear by it!</div>
+        <a class="directions-btn" href="https://www.google.com/maps/place/Monastiraki+Square/@37.9762,23.7250,17z" target="_blank">Open in Maps 🗺️</a>
+      </div>
+    </div>
+
+    <!-- 6. Temple of Olympian Zeus -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=800&q=80" alt="Temple of Zeus">
+      <div class="place-content">
+        <div class="place-header">
+          <span class="place-number">6</span>
+          <div>
+            <div class="place-name">Temple of Olympian Zeus</div>
+            <div class="place-type">🏛️ Ancient Temple</div>
+          </div>
+        </div>
+        <p class="place-description">Once the largest temple in Greece, dedicated to the king of gods. The 15 remaining massive columns give you a sense of its former grandeur. Hadrian's Arch nearby marks ancient city boundaries.</p>
+        <div class="place-tip"><strong>💡 Tip:</strong> Quick visit (30 min) but worth it. Combined ticket with Acropolis saves money. Great photos with columns framing the Acropolis!</div>
+        <a class="directions-btn" href="https://www.google.com/maps/place/Temple+of+Olympian+Zeus/@37.9693,23.7331,17z" target="_blank">Open in Maps 🗺️</a>
+      </div>
+    </div>
+
+    <!-- 7. National Garden -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?w=800&q=80" alt="National Garden Athens">
+      <div class="place-content">
+        <div class="place-header">
+          <span class="place-number">7</span>
+          <div>
+            <div class="place-name">National Garden & Zappeion</div>
+            <div class="place-type">🌳 Park • Peaceful Oasis</div>
+          </div>
+        </div>
+        <p class="place-description">A lush 38-acre escape from the city buzz. Shaded paths, ponds with ducks, ancient ruins, and the elegant Zappeion Hall. Perfect for a relaxing break between sightseeing.</p>
+        <div class="place-tip"><strong>💡 Tip:</strong> Great for escaping midday heat. The cafe at Zappeion is lovely for a coffee or lunch break.</div>
+        <a class="directions-btn" href="https://www.google.com/maps/place/National+Garden/@37.9721,23.7365,16z" target="_blank">Open in Maps 🗺️</a>
+      </div>
+    </div>
+
+    <!-- 8. Syntagma Square -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1594398901394-4c0e15f3fbcd?w=800&q=80" alt="Syntagma Square">
+      <div class="place-content">
+        <div class="place-header">
+          <span class="place-number">8</span>
+          <div>
+            <div class="place-name">Syntagma Square & Parliament</div>
+            <div class="place-type">🏛️ Main Square • Changing of Guard</div>
+          </div>
+        </div>
+        <p class="place-description">Athens' central square fronting the Parliament building. Watch the famous Evzones guards in traditional dress perform the changing of the guard ceremony—it's quite a spectacle!</p>
+        <div class="place-tip"><strong>💡 Tip:</strong> Changing of guard happens every hour, but Sunday at 11am has the full ceremonial version with the entire unit. Don't miss it!</div>
+        <a class="directions-btn" href="https://www.google.com/maps/place/Syntagma+Square/@37.9754,23.7348,17z" target="_blank">Open in Maps 🗺️</a>
+      </div>
+    </div>
+
+    <!-- 9. Lycabettus Hill -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80" alt="Lycabettus Hill">
+      <div class="place-content">
+        <div class="place-header">
+          <span class="place-number">9</span>
+          <div>
+            <div class="place-name">Lycabettus Hill</div>
+            <div class="place-type">⛰️ Viewpoint • Sunset Spot</div>
+          </div>
+        </div>
+        <p class="place-description">The highest point in Athens with 360° panoramic views of the city, Acropolis, and sea. Take the funicular up and walk down through the pine-covered paths. Magical at sunset!</p>
+        <div class="place-tip"><strong>💡 Tip:</strong> Take the funicular up (€10 round trip), watch sunset from the top, then walk down. There's a restaurant at the summit if you want dinner with a view!</div>
+        <a class="directions-btn" href="https://www.google.com/maps/place/Lycabettus+Hill/@37.9838,23.7451,16z" target="_blank">Open in Maps 🗺️</a>
+      </div>
+    </div>
+
+    <!-- 10. Psyrri -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&q=80" alt="Psyrri nightlife">
+      <div class="place-content">
+        <div class="place-header">
+          <span class="place-number">10</span>
+          <div>
+            <div class="place-name">Psyrri District</div>
+            <div class="place-type">🍷 Nightlife • Street Art • Dining</div>
+          </div>
+        </div>
+        <p class="place-description">Athens' coolest neighborhood—bohemian vibes, amazing street art, trendy bars, and authentic tavernas. This is where locals hang out. The nightlife scene here is legendary.</p>
+        <div class="place-tip"><strong>💡 Tip:</strong> Come for dinner and stay for drinks. Try a rooftop bar for Acropolis views. Karamanlidika is a must for Greek meze!</div>
+        <a class="directions-btn" href="https://www.google.com/maps/place/Psyri,+Athens/@37.9786,23.7240,16z" target="_blank">Open in Maps 🗺️</a>
+      </div>
+    </div>
+
+  </div>
+  
+  <a class="back-link" href="index.html">← Back to Greece Overview</a>
+  
+  <footer>
+    Made with ❤️ for Pat & Cindy<br>
+    Enjoy Athens! 🇬🇷
+  </footer>
+
+</body>
+</html>
