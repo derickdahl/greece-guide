@@ -14,17 +14,23 @@
     }
     header {
       text-align: center;
-      padding: 20px;
+      padding: 24px 20px;
       background: rgba(255,255,255,0.1);
       backdrop-filter: blur(10px);
     }
     header h1 { font-size: 28px; margin-bottom: 4px; }
     header p { color: rgba(255,255,255,0.8); font-size: 14px; }
     
-    #map {
+    .map-container {
       width: 100%;
-      height: 300px;
-      border-bottom: 3px solid #ffd700;
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
     
     .places {
@@ -40,37 +46,32 @@
       overflow: hidden;
       color: #1a1a2e;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      cursor: pointer;
-      transition: transform 0.2s;
     }
-    .place-card:hover { transform: translateY(-2px); }
-    .place-card.active { border: 3px solid #ffd700; }
     
     .place-image {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
     }
     
     .place-content { padding: 16px; }
     .place-number {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: #0d47a1;
       color: white;
       width: 28px;
       height: 28px;
       border-radius: 50%;
-      text-align: center;
-      line-height: 28px;
       font-weight: bold;
       font-size: 14px;
       margin-right: 8px;
     }
     .place-name { 
-      font-size: 20px;
+      font-size: 22px;
       font-weight: bold;
       color: #1a1a2e;
-      display: inline;
     }
     .place-region {
       color: #666;
@@ -99,30 +100,32 @@
     }
     .place-tip {
       margin-top: 12px;
-      padding: 10px;
+      padding: 12px;
       background: #fff8e1;
       border-radius: 8px;
       font-size: 13px;
       color: #5d4037;
+      line-height: 1.5;
     }
     .place-tip strong { color: #ff8f00; }
     
     .directions-btn {
       display: block;
-      background: #0d47a1;
+      background: linear-gradient(135deg, #0d47a1, #1565c0);
       color: white;
       text-align: center;
-      padding: 12px;
+      padding: 14px;
       text-decoration: none;
       font-weight: 600;
       margin-top: 12px;
-      border-radius: 8px;
+      border-radius: 10px;
+      font-size: 15px;
     }
-    .directions-btn:active { background: #1565c0; }
+    .directions-btn:active { opacity: 0.9; }
     
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 24px;
       color: rgba(255,255,255,0.6);
       font-size: 13px;
     }
@@ -134,144 +137,138 @@
     <p>Top 5 Must-Visit Places for Pat & Cindy</p>
   </header>
   
-  <div id="map"></div>
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262912.8984375!2d22.5!3d38.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135b4ac711716c63%3A0x363a1775dc9a2d1d!2sGreece!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus&z=6"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
   
-  <div class="places" id="places"></div>
+  <div class="places">
+    
+    <!-- Santorini -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800&q=80" alt="Santorini">
+      <div class="place-content">
+        <div style="display:flex; align-items:center;">
+          <span class="place-number">1</span>
+          <span class="place-name">Santorini</span>
+        </div>
+        <div class="place-region">📍 Cyclades Islands</div>
+        <p class="place-description">The crown jewel of Greek islands. Famous for its stunning sunsets, white-washed buildings with blue domes, and dramatic caldera views. Absolutely romantic and unforgettable.</p>
+        <div class="place-highlights">
+          <span class="highlight">🌅 Oia Sunset</span>
+          <span class="highlight">🏛️ Blue Domes</span>
+          <span class="highlight">🍷 Wine Tasting</span>
+          <span class="highlight">🏖️ Red Beach</span>
+        </div>
+        <div class="place-tip"><strong>💡 Pro Tip:</strong> Watch the sunset from Oia, but arrive 2 hours early to get a good spot. Book a caldera-view restaurant for dinner—it's worth every euro!</div>
+        <a class="directions-btn" href="https://www.google.com/maps/search/Santorini+Greece" target="_blank">
+          Open in Google Maps 🗺️
+        </a>
+      </div>
+    </div>
+
+    <!-- Athens -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80" alt="Athens Acropolis">
+      <div class="place-content">
+        <div style="display:flex; align-items:center;">
+          <span class="place-number">2</span>
+          <span class="place-name">Athens & The Acropolis</span>
+        </div>
+        <div class="place-region">📍 Attica</div>
+        <p class="place-description">The birthplace of democracy and Western civilization. The Acropolis and Parthenon are bucket-list wonders. The charming Plaka neighborhood below is perfect for dinner and exploring.</p>
+        <div class="place-highlights">
+          <span class="highlight">🏛️ Parthenon</span>
+          <span class="highlight">🏺 Acropolis Museum</span>
+          <span class="highlight">🍽️ Plaka District</span>
+          <span class="highlight">🏺 Ancient Agora</span>
+        </div>
+        <div class="place-tip"><strong>💡 Pro Tip:</strong> Go early morning (8am) to beat crowds and heat. The Acropolis Museum is air-conditioned—perfect for a midday escape!</div>
+        <a class="directions-btn" href="https://www.google.com/maps/search/Acropolis+Athens+Greece" target="_blank">
+          Open in Google Maps 🗺️
+        </a>
+      </div>
+    </div>
+
+    <!-- Mykonos -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1601581875039-e899893d520c?w=800&q=80" alt="Mykonos">
+      <div class="place-content">
+        <div style="display:flex; align-items:center;">
+          <span class="place-number">3</span>
+          <span class="place-name">Mykonos</span>
+        </div>
+        <div class="place-region">📍 Cyclades Islands</div>
+        <p class="place-description">The glamorous island with iconic windmills, the stunning Little Venice waterfront, and beautiful beaches. Perfect blend of relaxation, great food, and vibrant nightlife.</p>
+        <div class="place-highlights">
+          <span class="highlight">🏘️ Little Venice</span>
+          <span class="highlight">🌬️ Windmills</span>
+          <span class="highlight">🏖️ Paradise Beach</span>
+          <span class="highlight">🌃 Nightlife</span>
+        </div>
+        <div class="place-tip"><strong>💡 Pro Tip:</strong> Little Venice is magical at sunset—grab a table at a waterfront bar. For a quieter beach experience, try Agios Sostis instead of the party beaches.</div>
+        <a class="directions-btn" href="https://www.google.com/maps/search/Mykonos+Greece" target="_blank">
+          Open in Google Maps 🗺️
+        </a>
+      </div>
+    </div>
+
+    <!-- Meteora -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Meteora">
+      <div class="place-content">
+        <div style="display:flex; align-items:center;">
+          <span class="place-number">4</span>
+          <span class="place-name">Meteora</span>
+        </div>
+        <div class="place-region">📍 Thessaly (mainland)</div>
+        <p class="place-description">Otherworldly rock formations topped with ancient monasteries. One of the most spectacular and spiritual places in all of Europe. A UNESCO World Heritage Site that will leave you speechless.</p>
+        <div class="place-highlights">
+          <span class="highlight">⛪ 6 Monasteries</span>
+          <span class="highlight">🥾 Hiking Trails</span>
+          <span class="highlight">🌅 Sunset Views</span>
+          <span class="highlight">📸 Photography</span>
+        </div>
+        <div class="place-tip"><strong>💡 Pro Tip:</strong> Visit Great Meteoron and Varlaam monasteries—they're the most impressive. Dress modestly (long pants, covered shoulders). Sunset photos are incredible from the viewing platforms!</div>
+        <a class="directions-btn" href="https://www.google.com/maps/search/Meteora+Greece" target="_blank">
+          Open in Google Maps 🗺️
+        </a>
+      </div>
+    </div>
+
+    <!-- Crete -->
+    <div class="place-card">
+      <img class="place-image" src="https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?w=800&q=80" alt="Crete">
+      <div class="place-content">
+        <div style="display:flex; align-items:center;">
+          <span class="place-number">5</span>
+          <span class="place-name">Crete</span>
+        </div>
+        <div class="place-region">📍 Greece's Largest Island</div>
+        <p class="place-description">Ancient Minoan ruins, stunning pink-sand beaches, dramatic gorges, and arguably the best food in all of Greece. Crete is a destination unto itself—you could spend weeks here!</p>
+        <div class="place-highlights">
+          <span class="highlight">🏛️ Knossos Palace</span>
+          <span class="highlight">🏖️ Elafonisi Beach</span>
+          <span class="highlight">🥾 Samaria Gorge</span>
+          <span class="highlight">🏘️ Chania Old Town</span>
+        </div>
+        <div class="place-tip"><strong>💡 Pro Tip:</strong> Chania's old Venetian harbor is incredibly romantic for an evening stroll. Don't miss trying dakos salad and fresh grilled octopus by the water!</div>
+        <a class="directions-btn" href="https://www.google.com/maps/search/Chania+Crete+Greece" target="_blank">
+          Open in Google Maps 🗺️
+        </a>
+      </div>
+    </div>
+
+  </div>
   
   <footer>
-    Made with ❤️ by Derick & L3 • Have an amazing trip!
+    Made with ❤️ by Derick & L3<br>
+    Have an amazing trip, Pat & Cindy! 🇬🇷✈️
   </footer>
 
-  <script>
-    const places = [
-      {
-        id: 1,
-        name: "Santorini",
-        region: "Cyclades Islands",
-        lat: 36.3932,
-        lng: 25.4615,
-        image: "https://images.unsplash.com/photo-1570077188670-e3a8d3c6e8d4?w=800&q=80",
-        description: "The crown jewel of Greek islands. Famous for its stunning sunsets, white-washed buildings with blue domes, and dramatic caldera views. A romantic paradise.",
-        highlights: ["Oia Sunset", "Caldera Views", "Wine Tasting", "Black Sand Beaches"],
-        tip: "Watch the sunset from Oia, but arrive 2 hours early to get a good spot. Book a caldera-view restaurant for dinner!"
-      },
-      {
-        id: 2,
-        name: "Athens & The Acropolis",
-        region: "Attica",
-        lat: 37.9715,
-        lng: 23.7267,
-        image: "https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80",
-        description: "The birthplace of democracy and Western civilization. The Acropolis and Parthenon are bucket-list wonders. The Plaka neighborhood below is charming for dinner.",
-        highlights: ["Parthenon", "Acropolis Museum", "Plaka District", "Ancient Agora"],
-        tip: "Go early morning (8am) to beat crowds and heat. The Acropolis Museum is air-conditioned—perfect for midday escape!"
-      },
-      {
-        id: 3,
-        name: "Mykonos",
-        region: "Cyclades Islands",
-        lat: 37.4467,
-        lng: 25.3289,
-        image: "https://images.unsplash.com/photo-1601581875039-e899893d520c?w=800&q=80",
-        description: "The glamorous party island with iconic windmills, Little Venice waterfront, and pristine beaches. Perfect blend of relaxation and nightlife.",
-        highlights: ["Little Venice", "Windmills", "Paradise Beach", "Chora Town"],
-        tip: "Little Venice is magical at sunset. For a quieter beach, try Agios Sostis instead of the famous party beaches."
-      },
-      {
-        id: 4,
-        name: "Meteora",
-        region: "Thessaly",
-        lat: 39.7217,
-        lng: 21.6306,
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-        description: "Otherworldly rock formations topped with ancient monasteries. One of the most spectacular and spiritual places in all of Europe. UNESCO World Heritage Site.",
-        highlights: ["6 Active Monasteries", "Hiking Trails", "Sunset Viewpoints", "Rock Climbing"],
-        tip: "Visit Great Meteoron and Varlaam monasteries. Dress modestly (long pants, covered shoulders). Best photos at sunset!"
-      },
-      {
-        id: 5,
-        name: "Crete",
-        region: "Crete Island",
-        lat: 35.2401,
-        lng: 24.8093,
-        image: "https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?w=800&q=80",
-        description: "Greece's largest island with ancient Minoan ruins, stunning beaches, dramatic gorges, and the best food in Greece. A destination unto itself.",
-        highlights: ["Knossos Palace", "Samaria Gorge", "Elafonisi Beach", "Chania Old Town"],
-        tip: "Chania's old Venetian harbor is incredibly romantic. Try local dakos salad and fresh seafood by the water!"
-      }
-    ];
-
-    // Render place cards
-    const placesContainer = document.getElementById('places');
-    places.forEach(place => {
-      const card = document.createElement('div');
-      card.className = 'place-card';
-      card.id = `place-${place.id}`;
-      card.innerHTML = `
-        <img class="place-image" src="${place.image}" alt="${place.name}" loading="lazy">
-        <div class="place-content">
-          <div>
-            <span class="place-number">${place.id}</span>
-            <span class="place-name">${place.name}</span>
-          </div>
-          <div class="place-region">📍 ${place.region}</div>
-          <p class="place-description">${place.description}</p>
-          <div class="place-highlights">
-            ${place.highlights.map(h => `<span class="highlight">${h}</span>`).join('')}
-          </div>
-          <div class="place-tip"><strong>💡 Pro Tip:</strong> ${place.tip}</div>
-          <a class="directions-btn" href="https://www.google.com/maps/dir/?api=1&destination=${place.lat},${place.lng}" target="_blank">
-            Open in Google Maps 🗺️
-          </a>
-        </div>
-      `;
-      card.onclick = () => {
-        map.panTo({ lat: place.lat, lng: place.lng });
-        map.setZoom(10);
-        document.querySelectorAll('.place-card').forEach(c => c.classList.remove('active'));
-        card.classList.add('active');
-      };
-      placesContainer.appendChild(card);
-    });
-
-    // Initialize Google Map
-    let map;
-    function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 37.5, lng: 24.0 },
-        zoom: 6,
-        styles: [
-          { featureType: "water", elementType: "geometry", stylers: [{ color: "#193341" }] },
-          { featureType: "landscape", elementType: "geometry", stylers: [{ color: "#2c5364" }] },
-          { featureType: "road", stylers: [{ visibility: "off" }] },
-          { featureType: "poi", stylers: [{ visibility: "off" }] },
-          { elementType: "labels.text.fill", stylers: [{ color: "#ffffff" }] },
-          { elementType: "labels.text.stroke", stylers: [{ color: "#1a1a2e" }] }
-        ],
-        disableDefaultUI: true,
-        zoomControl: true
-      });
-
-      places.forEach(place => {
-        const marker = new google.maps.Marker({
-          position: { lat: place.lat, lng: place.lng },
-          map: map,
-          title: place.name,
-          label: {
-            text: place.id.toString(),
-            color: 'white',
-            fontWeight: 'bold'
-          }
-        });
-        
-        marker.addListener('click', () => {
-          document.getElementById(`place-${place.id}`).scrollIntoView({ behavior: 'smooth', block: 'center' });
-          document.querySelectorAll('.place-card').forEach(c => c.classList.remove('active'));
-          document.getElementById(`place-${place.id}`).classList.add('active');
-        });
-      });
-    }
-  </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNLrJhOMz6idD05pzfn5lhA-TAw-mAZCU&callback=initMap"></script>
 </body>
 </html>
