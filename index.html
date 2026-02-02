@@ -137,19 +137,32 @@
     <p>Top 5 Must-Visit Places for Pat & Cindy</p>
   </header>
   
-  <div class="map-container">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262912.8984375!2d22.5!3d38.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135b4ac711716c63%3A0x363a1775dc9a2d1d!2sGreece!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus&z=6"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+  <!-- Interactive Map with all 5 locations -->
+  <div class="map-container" id="map-area">
+    <a href="https://www.google.com/maps/dir/Santorini,+Greece/Athens,+Greece/Mykonos,+Greece/Meteora,+Greece/Chania,+Crete,+Greece/" target="_blank" style="display:block; width:100%; height:100%;">
+      <img 
+        src="https://maps.googleapis.com/maps/api/staticmap?size=640x280&scale=2&maptype=terrain&markers=color:red%7Clabel:1%7C36.393,25.461&markers=color:red%7Clabel:2%7C37.971,23.727&markers=color:red%7Clabel:3%7C37.447,25.329&markers=color:red%7Clabel:4%7C39.722,21.631&markers=color:red%7Clabel:5%7C35.240,24.809&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+        alt="Greece Map with 5 destinations"
+        style="width:100%; height:100%; object-fit:cover;"
+        onerror="this.onerror=null; this.src=''; this.parentElement.innerHTML='<div style=\'height:280px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a3a5c,#0a2540);color:white;text-align:center;\'><div><div style=\'font-size:50px;margin-bottom:10px;\'>🗺️🇬🇷</div><div style=\'font-size:16px;\'>Tap to open full map</div></div></div>';"
+      >
+    </a>
+  </div>
+  
+  <!-- Quick jump links -->
+  <div style="display:flex; justify-content:center; gap:8px; padding:12px 8px; background:rgba(255,255,255,0.1); flex-wrap:wrap;">
+    <span style="color:rgba(255,255,255,0.7); font-size:12px;">Jump to:</span>
+    <a href="#place-1" style="color:#ffd700; text-decoration:none; font-size:13px; font-weight:500;">❶ Santorini</a>
+    <a href="#place-2" style="color:#ffd700; text-decoration:none; font-size:13px; font-weight:500;">❷ Athens</a>
+    <a href="#place-3" style="color:#ffd700; text-decoration:none; font-size:13px; font-weight:500;">❸ Mykonos</a>
+    <a href="#place-4" style="color:#ffd700; text-decoration:none; font-size:13px; font-weight:500;">❹ Meteora</a>
+    <a href="#place-5" style="color:#ffd700; text-decoration:none; font-size:13px; font-weight:500;">❺ Crete</a>
   </div>
   
   <div class="places">
     
     <!-- Santorini -->
-    <div class="place-card">
+    <div class="place-card" id="place-1">
       <img class="place-image" src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800&q=80" alt="Santorini">
       <div class="place-content">
         <div style="display:flex; align-items:center;">
@@ -172,7 +185,8 @@
     </div>
 
     <!-- Athens -->
-    <div class="place-card">
+    
+    <div class="place-card" id="place-2">
       <img class="place-image" src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80" alt="Athens Acropolis">
       <div class="place-content">
         <div style="display:flex; align-items:center;">
@@ -195,7 +209,7 @@
     </div>
 
     <!-- Mykonos -->
-    <div class="place-card">
+    <div class="place-card" id="place-3">
       <img class="place-image" src="https://images.unsplash.com/photo-1601581875039-e899893d520c?w=800&q=80" alt="Mykonos">
       <div class="place-content">
         <div style="display:flex; align-items:center;">
@@ -218,7 +232,7 @@
     </div>
 
     <!-- Meteora -->
-    <div class="place-card">
+    <div class="place-card" id="place-4">
       <img class="place-image" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Meteora">
       <div class="place-content">
         <div style="display:flex; align-items:center;">
@@ -241,7 +255,7 @@
     </div>
 
     <!-- Crete -->
-    <div class="place-card">
+    <div class="place-card" id="place-5">
       <img class="place-image" src="https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?w=800&q=80" alt="Crete">
       <div class="place-content">
         <div style="display:flex; align-items:center;">
